@@ -1,0 +1,30 @@
+<div class="login-container">
+  <div class="login-box">
+    <h2>Login to Bankify</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+      <div class="input-group">
+        <label>Phone Number</label>
+        <input type="text" formControlName="phoneNumber" placeholder="Enter your phone number">
+        <small class="error" *ngIf="isSubmitted && formControls['phoneNumber'].invalid">
+          Must be a valid 10-digit phone number.
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" formControlName="password" placeholder="Enter your password">
+        <small class="error" *ngIf="isSubmitted && formControls['password'].invalid">
+          Password must be at least 6 characters long.
+        </small>
+      </div>
+
+      <button type="submit" [disabled]="isLoading">
+        <span *ngIf="isLoading" class="loader"></span>
+        <span *ngIf="!isLoading">Login</span>
+      </button>
+    </form>
+
+    <p class="register-link">Don't have an account? <a routerLink="/register">Register here</a></p>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="register-container">
+  <div class="register-box">
+    <h2>Register for Bankify</h2>
+    
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" formControlName="fullName" placeholder="Enter your full name">
+        <small class="error" *ngIf="isSubmitted && formControls['fullName'].invalid">
+          Name must be at least 3 characters long.
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="Enter your email">
+        <small class="error" *ngIf="isSubmitted && formControls['email'].invalid">
+          Valid email is required.
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label>Phone Number</label>
+        <input type="text" formControlName="phoneNumber" placeholder="Enter 10-digit phone number">
+        <small class="error" *ngIf="isSubmitted && formControls['phoneNumber'].invalid">
+          Must be a valid 10-digit phone number.
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label>Address</label>
+        <input type="text" formControlName="address" placeholder="Enter your address">
+        <small class="error" *ngIf="isSubmitted && formControls['address'].invalid">
+          Address is required.
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" formControlName="password" placeholder="Enter at least 6 characters">
+        <small class="error" *ngIf="isSubmitted && formControls['password'].invalid">
+          Password must be at least 6 characters long.
+        </small>
+      </div>
+
+      <button type="submit" [disabled]="isLoading">
+        <span *ngIf="isLoading" class="loader"></span>
+        <span *ngIf="!isLoading">Register</span>
+      </button>
+    </form>
+
+    <p class="login-link">Already have an account? <a routerLink="/login">Login here</a></p>
+  </div>
+</div>

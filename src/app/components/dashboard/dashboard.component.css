@@ -1,0 +1,239 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out;
+  position: relative;
+}
+
+.sidebar:hover {
+  width: 270px;
+}
+
+.bank-name {
+  font-size: 1.8rem;
+  color: #2e7d32;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar:hover .bank-name {
+  transform: scale(1.1);
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.sidebar ul li:hover {
+  background: #a5d6a7;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar ul li::before {
+  content: ">";
+  position: absolute;
+  left: -10px;
+  opacity: 0;
+  transition: left 0.3s ease-in-out, opacity 0.3s;
+}
+
+.sidebar ul li:hover::before {
+  left: 5px;
+  opacity: 1;
+}
+
+/* Sidebar Icons */
+.sidebar ul li i {
+  font-size: 1.2rem;
+  color: #2e7d32;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar ul li:hover i {
+  transform: scale(1.2);
+}
+
+
+.sidebar .logout:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Navbar */
+.navbar {
+  background: #ffffff;
+  padding: 15px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2e7d32;
+  transition: background 0.3s ease-in-out;
+}
+
+.navbar:hover {
+  background: #f1f8f1;
+}
+
+/* Profile Card */
+.profile-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card h3 {
+  color: #2e7d32;
+  border-bottom: 2px solid #2e7d32;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.profile-info p {
+  margin: 10px 0;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.profile-info p:hover {
+  color: #2e7d32;
+}
+
+/* Content Section */
+.content-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.content-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.content-section h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .sidebar ul li {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+.deposit-container {
+  background: #f9f9f9;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.deposit-container h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.deposit-container label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.deposit-container input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.deposit-container button {
+  background: #27ae60;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.deposit-container button:hover {
+  background: #219150;
+}
